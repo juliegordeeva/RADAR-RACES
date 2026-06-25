@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0a0b0d;
+  --color-ink-soft: #111317;
+  --color-carbon: #16181d;
+  --color-steel: #24272e;
+  --color-fog: #8b9099;
+  --color-mist: #c7ccd4;
+  --color-snow: #f4f6f9;
+  --color-racing: #e10600;
+  --color-racing-dark: #b00500;
+  --color-amber: #f5b301;
+
+  --font-display: var(--font-oswald), "Arial Narrow", sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+
+  --shadow-glow: 0 0 60px -15px rgba(225, 6, 0, 0.55);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  border-color: var(--color-steel);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-mist);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--color-racing);
+  color: #fff;
+}
+
+/* Display headings */
+.font-display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 0.95;
+}
+
+/* Section tag label */
+.tag-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.78rem;
+  color: var(--color-racing);
+}
+.tag-label::before {
+  content: "";
+  width: 28px;
+  height: 2px;
+  background: var(--color-racing);
+}
+
+/* Thin racing divider with motion */
+.track-line {
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-racing) 0,
+    var(--color-racing) 22px,
+    transparent 22px,
+    transparent 44px
+  );
+}
+
+/* Reveal on scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Subtle grain / vignette helpers */
+.vignette {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    rgba(10, 11, 13, 0.4) 60%,
+    var(--color-ink) 100%
+  );
+}
+
+.gradient-text {
+  background: linear-gradient(120deg, #fff 0%, var(--color-mist) 40%, var(--color-fog) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
