@@ -22,6 +22,7 @@ export default function Header() {
     { href: "#modules", label: t.nav.modules },
     { href: "#audience", label: t.nav.audience },
     { href: "#speaker", label: t.nav.speaker },
+    { href: "#pricing", label: t.nav.pricing },
   ];
 
   return (

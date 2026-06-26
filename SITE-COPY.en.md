@@ -29,6 +29,8 @@ A new-format management intensive: developing leadership skills of executives an
 
 **Speaker:** Speaker
 
+**Pricing:** Pricing
+
 **Contacts:** Contacts
 
 **Header button:** Request a call

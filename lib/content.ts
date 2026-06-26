@@ -34,6 +34,7 @@ export interface Dictionary {
     modules: string;
     audience: string;
     speaker: string;
+    pricing: string;
     contacts: string;
     cta: string;
   };
