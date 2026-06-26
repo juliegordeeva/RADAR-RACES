@@ -6,6 +6,8 @@ import Reveal from "./Reveal";
 
 export default function Pricing() {
   const { t } = useI18n();
+  const blocks = t.pricing.blocks ?? [];
+  const [asset, partners, included] = blocks;
 
   return (
     <section id="pricing" className="border-t border-steel bg-ink-soft py-24 lg:py-32">
@@ -19,6 +21,57 @@ export default function Pricing() {
             <p className="mt-6 text-lg text-mist">{t.pricing.intro}</p>
           </Reveal>
         </div>
+
+        {blocks.length > 0 && (
+          <div className="mt-14">
+            <div className="grid gap-6 lg:grid-cols-5">
+              {asset && (
+                <Reveal className="lg:col-span-2">
+                  <div className="flex h-full flex-col rounded-3xl border border-racing/40 bg-gradient-to-b from-carbon to-ink p-8 shadow-glow">
+                    <span className="font-display text-sm font-semibold uppercase tracking-widest text-racing">
+                      {asset.title}
+                    </span>
+                    <p className="mt-4 text-lg leading-relaxed text-mist">{asset.desc}</p>
+                  </div>
+                </Reveal>
+              )}
+
+              {partners && (
+                <Reveal className="lg:col-span-3" delay={80}>
+                  <div className="h-full rounded-3xl border border-steel bg-carbon p-8">
+                    <h3 className="font-display text-xl font-bold text-white">{partners.title}</h3>
+                    {partners.items.length > 0 && (
+                      <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                        {partners.items.map((item, j) => (
+                          <li key={j} className="flex gap-3 text-sm text-mist">
+                            <svg
+                              className="mt-0.5 h-5 w-5 flex-none text-racing"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2.2"
+                            >
+                              <path d="M20 6 9 17l-5-5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </Reveal>
+              )}
+            </div>
+
+            {included && (
+              <Reveal delay={140}>
+                <div className="mt-6 rounded-3xl border border-steel bg-carbon/60 px-8 py-6 backdrop-blur-sm">
+                  <p className="text-base leading-relaxed text-mist">{included.desc}</p>
+                </div>
+              </Reveal>
+            )}
+          </div>
+        )}
 
         {t.pricing.cards && t.pricing.cards.length > 0 && (
           <div className="mt-14 grid gap-5 lg:grid-cols-3">
@@ -55,8 +108,12 @@ export default function Pricing() {
           </div>
         )}
 
-        <Reveal delay={120}>
-          <p className={`text-sm text-fog ${t.pricing.cards?.length ? "mt-8" : "mt-6"}`}>
+        <Reveal delay={180}>
+          <p
+            className={`text-sm text-fog ${
+              blocks.length || t.pricing.cards?.length ? "mt-8" : "mt-6"
+            }`}
+          >
             {t.pricing.note}
           </p>
         </Reveal>

@@ -88,6 +88,7 @@ export interface Dictionary {
     tag: string;
     title: string;
     intro: string;
+    blocks: { title: string; desc: string; items: string[] }[];
     cards?: { title: string; price: string; desc: string; featured?: boolean }[];
     note: string;
   };

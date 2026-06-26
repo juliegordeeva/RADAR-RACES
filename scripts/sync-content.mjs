@@ -101,6 +101,19 @@ function parseRadar(body) {
     });
 }
 
+function parsePricingBlocks(body) {
+  const subs = splitSubsections(body);
+  const blocks = [];
+  for (const [, partBody] of subs) {
+    blocks.push({
+      title: field(partBody, "Заголовок") || field(partBody, "Title"),
+      desc: field(partBody, "Описание") || field(partBody, "Description"),
+      items: bulletList(partBody, "Список").concat(bulletList(partBody, "List")),
+    });
+  }
+  return blocks;
+}
+
 function parseFormatParts(body) {
   const subs = splitSubsections(body);
   const parts = [];
@@ -270,6 +283,7 @@ function parseRu(sections) {
       tag: field(pricing, "Метка секции"),
       title: field(pricing, "Заголовок"),
       intro: field(pricing, "Подзаголовок"),
+      blocks: parsePricingBlocks(pricing),
       note: field(pricing, "Примечание"),
     },
     contacts: {
@@ -365,6 +379,7 @@ function parseEn(sections) {
       tag: field(pricing, "Section label"),
       title: field(pricing, "Title"),
       intro: field(pricing, "Subtitle"),
+      blocks: parsePricingBlocks(pricing),
       note: field(pricing, "Note"),
     },
     contacts: {
