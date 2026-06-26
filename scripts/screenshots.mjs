@@ -48,7 +48,7 @@ const SECTIONS = [
   { id: "format", name: "03-format" },
   { id: "modules", name: "04-modules" },
   { id: "audience", name: "05-audience" },
-  { id: "speaker", name: "06-speaker" },
+  { id: "team", name: "06-team" },
   { id: "pricing", name: "07-pricing" },
   { id: "contacts", name: "08-contacts" },
 ];

@@ -52,7 +52,7 @@ export default function Speaker() {
   ];
 
   return (
-    <section id="speaker" className="border-t border-steel bg-ink-soft py-24 lg:py-32">
+    <section id="team" className="border-t border-steel bg-ink-soft py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <Reveal>

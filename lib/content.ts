@@ -33,7 +33,7 @@ export interface Dictionary {
     format: string;
     modules: string;
     audience: string;
-    speaker: string;
+    team: string;
     pricing: string;
     contacts: string;
     cta: string;
