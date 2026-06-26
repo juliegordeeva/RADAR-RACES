@@ -17,6 +17,9 @@ out/
 next-env.d.ts
 .swc/
 
+# Local preview screenshots (generated before deploy)
+screenshots/
+
 # Logs
 *.log
 npm-debug.log*

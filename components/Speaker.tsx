@@ -18,7 +18,7 @@ export default function Speaker() {
           <Reveal>
             <span className="tag-label mb-5">{t.speaker.tag}</span>
             <h2 className="font-display text-4xl font-bold text-white sm:text-5xl">
-              {t.speaker.title}
+              {t.speaker.title || t.speaker.tag}
             </h2>
 
             <div className="mt-8 flex items-center gap-5">
@@ -35,6 +35,10 @@ export default function Speaker() {
               <p className="font-semibold text-white">{t.speaker.producerName}</p>
               <p className="mt-1 text-sm text-fog">{t.speaker.producerRole}</p>
             </div>
+
+            {t.speaker.mission && (
+              <p className="mt-8 text-base leading-relaxed text-mist">{t.speaker.mission}</p>
+            )}
           </Reveal>
 
           <Reveal delay={120}>

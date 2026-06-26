@@ -2,6 +2,7 @@
 
 import { useI18n } from "@/lib/i18n";
 import { asset } from "@/lib/assets";
+import { ctaMailto } from "@/lib/mailto";
 
 export default function Hero() {
   const { t } = useI18n();
@@ -37,7 +38,7 @@ export default function Hero() {
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
-              href="#contacts"
+              href={ctaMailto()}
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-racing px-7 py-3.5 text-base font-semibold text-white shadow-glow transition-transform hover:scale-[1.03]"
             >
               {t.hero.ctaPrimary}
@@ -46,7 +47,7 @@ export default function Hero() {
               </svg>
             </a>
             <a
-              href="#about"
+              href={ctaMailto()}
               className="inline-flex items-center justify-center rounded-full border border-mist/40 px-7 py-3.5 text-base font-semibold text-white transition-colors hover:border-white hover:bg-white/5"
             >
               {t.hero.ctaSecondary}

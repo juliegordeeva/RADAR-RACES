@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useI18n } from "@/lib/i18n";
+import { ctaMailto } from "@/lib/mailto";
 
 export default function Header() {
   const { t, lang, setLang } = useI18n();
@@ -21,7 +22,6 @@ export default function Header() {
     { href: "#modules", label: t.nav.modules },
     { href: "#audience", label: t.nav.audience },
     { href: "#speaker", label: t.nav.speaker },
-    { href: "#pricing", label: t.nav.pricing },
   ];
 
   return (
@@ -75,7 +75,7 @@ export default function Header() {
           </div>
 
           <a
-            href="#contacts"
+            href={ctaMailto()}
             className="hidden rounded-full bg-white px-4 py-2 text-sm font-semibold text-ink transition-colors hover:bg-mist sm:inline-flex"
           >
             {t.nav.cta}
@@ -121,7 +121,7 @@ export default function Header() {
               </a>
             ))}
             <a
-              href="#contacts"
+              href={ctaMailto()}
               onClick={() => setOpen(false)}
               className="mt-2 rounded-lg bg-racing px-3 py-2.5 text-center text-base font-semibold text-white"
             >

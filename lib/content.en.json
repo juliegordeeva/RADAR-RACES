@@ -1,0 +1,157 @@
+{
+  "meta": {
+    "title": "RADAR RACES — Accelerate your management radar",
+    "description": "A new-format management intensive: developing leadership skills of executives and top teams through motorsport experience and a management debrief session."
+  },
+  "nav": {
+    "about": "About",
+    "format": "Format",
+    "modules": "RADAR International Program",
+    "audience": "Who it's for",
+    "speaker": "Speaker",
+    "contacts": "Contacts",
+    "cta": "Request a call"
+  },
+  "hero": {
+    "badge": "Executive-level program",
+    "title": "Accelerate your",
+    "titleAccent": "Management radar",
+    "subtitle": "Unique management sessions blending the extreme experience of racing on a professional track with a deep analysis of leadership competencies.",
+    "lead": "1–2–3 day intensives and strategic sessions for executives and top teams.",
+    "ctaPrimary": "Request a call",
+    "ctaSecondary": "Explore the program",
+    "stats": [
+      {
+        "value": "500+",
+        "label": "hours of training for top teams per year"
+      },
+      {
+        "value": "5",
+        "label": "management trajectories in each session"
+      },
+      {
+        "value": "3",
+        "label": "tracks: Moscow · Nizhny Novgorod · Dubai"
+      }
+    ]
+  },
+  "about": {
+    "tag": "About",
+    "title": "Learning through experience that changes thinking",
+    "paragraphs": [
+      "RADAR RACES is an innovative approach to developing leadership skills. We combine the extreme experience of motorsport with a deep analysis of management competencies.",
+      "The Experiential Learning format lets participants step beyond the familiar, rethink their management style and gain new insights to become more effective as leaders.",
+      "The race track becomes a metaphor for business: the same speed, risk and decisions under uncertainty — but here they can be lived through, understood and trained."
+    ],
+    "radar": [
+      {
+        "letter": "R",
+        "word": "Rapid decisions under speed and risk"
+      },
+      {
+        "letter": "A",
+        "word": "Adaptive and flexible thinking"
+      },
+      {
+        "letter": "D",
+        "word": "Deliberate action through awareness"
+      },
+      {
+        "letter": "A",
+        "word": "Analysis of reactions and behavioral patterns"
+      },
+      {
+        "letter": "R",
+        "word": "Rise of personal and managerial potential"
+      }
+    ]
+  },
+  "format": {
+    "tag": "Format",
+    "title": "Two parts of one intensive",
+    "intro": "Learning through new experience: first — laps on a professional track, then — a debrief of conscious and unconscious reactions and work on leadership competencies.",
+    "parts": [
+      {
+        "tag": "",
+        "title": "",
+        "desc": "",
+        "bullets": []
+      }
+    ]
+  },
+  "modules": {
+    "tag": "RADAR International Program",
+    "title": "6 management modules at Executive level",
+    "intro": "Each module lasts 3–4 days, followed by support and mentoring (chat-bot, expert guidance). Completing all modules earns a state-accredited diploma.",
+    "list": [
+      {
+        "n": "01",
+        "title": "Module 01",
+        "desc": ""
+      }
+    ]
+  },
+  "audience": {
+    "tag": "Who it's for",
+    "title": "For those who make strategic decisions",
+    "intro": "The program is built for leaders responsible for the growth and future of the business.",
+    "list": [
+      {
+        "title": "",
+        "desc": ""
+      }
+    ]
+  },
+  "speaker": {
+    "tag": "Team",
+    "title": "**Name:** Yulia Gordeeva",
+    "name": "Yulia Gordeeva",
+    "role": "International consultant, creative visionary behind RADAR RACES",
+    "bio": [
+      "2010–2022 Head of international corporate training programs, IBS Plekhanov",
+      "2022–present Head of consulting and training practices for mid-size and large businesses",
+      "In 2025–2026 personally delivered over 250 hours of corporate trainings and strategic sessions for executives",
+      "Speaker and director of MBA programs",
+      "Expert speaker at business development venues of the Moscow Government: MBM, CDP, Innovation Agency"
+    ],
+    "mission": "My goal is to pass on my superpower — teaching you to see the business situation in 3D: from the model, through the leadership team, decision economics and the human complexity of change, to a sustainable management system.",
+    "producerName": "Ilya Kamensky",
+    "producerRole": "Owner of Kamensky Racing School"
+  },
+  "gallery": {
+    "tag": "Gallery",
+    "title": "Where decisions are born",
+    "subtitle": "Professional track, pit lane and the team in action."
+  },
+  "pricing": {
+    "tag": "Pricing",
+    "title": "RADAR RACES — an investment in management growth",
+    "intro": "Organization of any format includes the off-site event, two experts, post-module support, contracts and certificates.",
+    "note": "The exact cost depends on the format, group composition and location. Leave a request — we'll tailor it to you."
+  },
+  "contacts": {
+    "tag": "Contacts",
+    "title": "Leave a request",
+    "intro": "",
+    "persons": [
+      {
+        "name": "Yulia Gordeeva",
+        "role": "Director of Corporate Training",
+        "email": "Prof@jgordeeva.ru",
+        "tg": "Prof_jouls"
+      }
+    ],
+    "form": {
+      "name": "",
+      "phone": "",
+      "email": "",
+      "message": "",
+      "submit": "",
+      "success": ""
+    }
+  },
+  "footer": {
+    "rights": "Kamensky Racing School",
+    "tagline": "New-format management intensives"
+  }
+}
