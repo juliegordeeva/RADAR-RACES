@@ -12,6 +12,8 @@
     "prebuild": "npm run content:sync",
     "screenshots": "node scripts/screenshots.mjs",
     "screenshots:fast": "node scripts/screenshots.mjs --skip-build",
+    "screenshots:mobile": "node scripts/screenshots.mjs --mobile",
+    "screenshots:mobile:fast": "node scripts/screenshots.mjs --mobile --skip-build",
     "predeploy": "npm run screenshots"
   },
   "dependencies": {

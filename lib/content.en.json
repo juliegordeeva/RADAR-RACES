@@ -104,7 +104,8 @@
   },
   "speaker": {
     "tag": "Team",
-    "title": "**Name:** Yulia Gordeeva",
+    "title": "",
+    "initials": "YG",
     "name": "Yulia Gordeeva",
     "role": "International consultant, creative visionary behind RADAR RACES",
     "bio": [
@@ -114,8 +115,9 @@
       "Speaker and director of MBA programs",
       "Expert speaker at business development venues of the Moscow Government: MBM, CDP, Innovation Agency"
     ],
-    "mission": "My goal is to pass on my superpower — teaching you to see the business situation in 3D: from the model, through the leadership team, decision economics and the human complexity of change, to a sustainable management system.",
+    "mission": "Our goal is to pass on our superpowers — teaching you to see the business situation in 3D: from the model, through the leadership team, decision economics and the human complexity of change, to a sustainable management system.",
     "producerName": "Ilya Kamensky",
+    "producerInitials": "IK",
     "producerRole": "Owner of Kamensky Racing School"
   },
   "gallery": {

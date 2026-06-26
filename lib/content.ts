@@ -76,10 +76,12 @@ export interface Dictionary {
     title: string;
     name: string;
     role: string;
+    initials?: string;
     bio: string[];
     mission?: string;
     producerName: string;
     producerRole: string;
+    producerInitials?: string;
   };
   gallery: { tag: string; title: string; subtitle: string };
   pricing: {

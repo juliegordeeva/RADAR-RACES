@@ -14,6 +14,17 @@ const SCREENSHOTS_DIR = path.join(ROOT, "screenshots");
 const REPO = "RADAR-RACES";
 const PORT = Number(process.env.SCREENSHOT_PORT || 3456);
 const BASE_URL = `http://127.0.0.1:${PORT}/${REPO}/`;
+const VIEWPORTS = {
+  desktop: { width: 1440, height: 900, deviceScaleFactor: 2, outputDir: SCREENSHOTS_DIR },
+  mobile: {
+    width: 390,
+    height: 844,
+    deviceScaleFactor: 3,
+    isMobile: true,
+    hasTouch: true,
+    outputDir: path.join(SCREENSHOTS_DIR, "mobile"),
+  },
+};
 
 const CHROME_PATHS = {
   darwin: [
@@ -157,7 +168,9 @@ async function captureSection(page, sectionId, outputPath) {
   await page.screenshot({ path: outputPath, type: "png" });
 }
 
-async function captureScreenshots(chromePath, skipBuild) {
+async function captureScreenshots(chromePath, skipBuild, mode) {
+  const viewport = VIEWPORTS[mode];
+
   if (!skipBuild) {
     log("Building static site...");
     await run("npm", ["run", "build"], {
@@ -169,25 +182,32 @@ async function captureScreenshots(chromePath, skipBuild) {
     throw new Error(`Build output not found in ${OUT_DIR}. Run npm run build first.`);
   }
 
-  mkdirSync(SCREENSHOTS_DIR, { recursive: true });
+  mkdirSync(viewport.outputDir, { recursive: true });
 
   log(`Starting local server at ${BASE_URL}`);
   const server = await startStaticServer();
   await waitForServer(BASE_URL);
 
   log(`Launching Google Chrome: ${chromePath}`);
+  log(`Using ${mode} viewport: ${viewport.width}x${viewport.height}`);
   const browser = await puppeteer.launch({
     executablePath: chromePath,
     headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    defaultViewport: { width: 1440, height: 900, deviceScaleFactor: 2 },
+    defaultViewport: {
+      width: viewport.width,
+      height: viewport.height,
+      deviceScaleFactor: viewport.deviceScaleFactor,
+      isMobile: viewport.isMobile || false,
+      hasTouch: viewport.hasTouch || false,
+    },
   });
 
   try {
     const page = await browser.newPage();
 
     for (const lang of ["ru", "en"]) {
-      const langDir = path.join(SCREENSHOTS_DIR, lang);
+      const langDir = path.join(viewport.outputDir, lang);
       mkdirSync(langDir, { recursive: true });
 
       log(`Capturing ${lang.toUpperCase()} screenshots...`);
@@ -209,13 +229,14 @@ async function captureScreenshots(chromePath, skipBuild) {
     server.close();
   }
 
-  log(`Done. Screenshots saved to ${path.relative(ROOT, SCREENSHOTS_DIR)}/`);
+  log(`Done. Screenshots saved to ${path.relative(ROOT, viewport.outputDir)}/`);
 }
 
 const skipBuild = process.argv.includes("--skip-build");
+const mode = process.argv.includes("--mobile") ? "mobile" : "desktop";
 const chromePath = process.env.CHROME_PATH || findChrome();
 
-captureScreenshots(chromePath, skipBuild).catch((error) => {
+captureScreenshots(chromePath, skipBuild, mode).catch((error) => {
   console.error(`[screenshots] ${error.message}`);
   process.exit(1);
 });

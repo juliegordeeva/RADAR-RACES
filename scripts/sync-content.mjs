@@ -141,6 +141,13 @@ function parseAudience(body) {
   return list;
 }
 
+function cleanSectionTitle(value) {
+  const trimmed = value.trim();
+  if (!trimmed) return "";
+  if (/^\*\*?(Имя|Name):\*\*/i.test(trimmed) || /^(Имя|Name):/i.test(trimmed)) return "";
+  return trimmed;
+}
+
 function parseSpeaker(body) {
   const experience = bulletList(body, "Опыт").concat(bulletList(body, "Experience"));
   const bio = experience.length
@@ -149,7 +156,8 @@ function parseSpeaker(body) {
 
   return {
     tag: field(body, "Метка секции") || field(body, "Section label"),
-    title: field(body, "Заголовок") || field(body, "Title"),
+    title: cleanSectionTitle(field(body, "Заголовок") || field(body, "Title")),
+    initials: field(body, "Инициалы") || field(body, "Initials"),
     name: field(body, "Имя") || field(body, "Name"),
     role: field(body, "Роль") || field(body, "Role"),
     bio,
@@ -159,6 +167,7 @@ function parseSpeaker(body) {
       field(body, "Lead partner for decision speed and reaction management") ||
       field(body, "Продюсер") ||
       field(body, "Producer"),
+    producerInitials: field(body, "Инициалы партнера") || field(body, "Partner initials"),
     producerRole:
       field(body, "Роль партнера") ||
       field(body, "Partner role") ||

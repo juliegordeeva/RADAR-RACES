@@ -225,8 +225,7 @@ The program is built for leaders responsible for the growth and future of the bu
 
 **Section label:** Team
 
-**Title:**  
-
+**Initials:** YG
 
 **Name:** Yulia Gordeeva
 
@@ -240,11 +239,13 @@ The program is built for leaders responsible for the growth and future of the bu
 - Speaker and director of MBA programs
 - Expert speaker at business development venues of the Moscow Government: MBM, CDP, Innovation Agency
 
-**Mission:** My goal is to pass on my superpower — teaching you to see the business situation in 3D: from the model, through the leadership team, decision economics and the human complexity of change, to a sustainable management system.
+**Partner initials:** IK
 
 **Lead partner for decision speed and reaction management:** Ilya Kamensky
 
 **Partner role:** Owner of Kamensky Racing School
+
+**Mission:** Our goal is to pass on our superpowers — teaching you to see the business situation in 3D: from the model, through the leadership team, decision economics and the human complexity of change, to a sustainable management system.
 
 ---
 
