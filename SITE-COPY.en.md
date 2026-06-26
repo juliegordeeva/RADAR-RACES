@@ -269,7 +269,23 @@ Professional track, pit lane and the team in action.
 RADAR RACES — an investment in management growth
 
 **Subtitle:**  
-Organization of any format includes the off-site event, two experts, post-module support, contracts and certificates.
+We organize any management event in the Experiential Learning style — training leaders through new experiences.
+
+Our key asset: race track sessions and a management debrief.
+
+Our key partners:
+
+yacht clubs and yacht regattas
+
+extreme river rafting
+
+canyoning in Kamchatka
+
+supercar driving on the ice of Lake Baikal
+
+light aircraft flights (MENA, CIS)
+
+Every session includes an off-site event, two experts, post-module support, contracts and certificates.
 
 **Note:**  
 The exact cost depends on the format, group composition and location. Leave a request — we'll tailor it to you.
