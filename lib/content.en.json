@@ -72,10 +72,28 @@
     "intro": "Learning through new experience: first — laps on a professional track, then — a debrief of conscious and unconscious reactions and work on leadership competencies.",
     "parts": [
       {
-        "tag": "",
-        "title": "",
-        "desc": "",
-        "bullets": []
+        "tag": "Part 1 · Track",
+        "title": "Racing laps and reaction debrief",
+        "desc": "Participation in laps on a professional track followed by an analysis of conscious and unconscious reactions.",
+        "bullets": [
+          "Experience of fast decision-making under stress",
+          "Risk management and real-time situation assessment skills",
+          "Understanding your reactions and behavioral patterns in extreme conditions",
+          "Awareness of personal limits and growth potential",
+          "Team interaction practice in an unconventional setting"
+        ]
+      },
+      {
+        "tag": "Part 2 · Session",
+        "title": "Conscious self-management as a leader",
+        "desc": "A session on the conscious management of personal and professional skills, talents and energy.",
+        "bullets": [
+          "Deep understanding of strengths and growth areas as a leader",
+          "Tools to boost personal and professional effectiveness",
+          "Strategies for managing energy and resourceful states",
+          "Conscious leadership and emotional intelligence skills",
+          "An action plan to develop key management competencies"
+        ]
       }
     ]
   },
@@ -86,8 +104,33 @@
     "list": [
       {
         "n": "01",
-        "title": "Module 01",
-        "desc": ""
+        "title": "Unlocking management potential",
+        "desc": "Race track training (partner Kamensky Racing School) and a session on conscious management of the leader's personal and professional effectiveness."
+      },
+      {
+        "n": "02",
+        "title": "Management business modeling",
+        "desc": "Building the leader's business model and a new company business model. Anti-crisis transformations for sustainable growth."
+      },
+      {
+        "n": "03",
+        "title": "Artificial intelligence in management",
+        "desc": "Practical adoption of AI in making and validating management decisions."
+      },
+      {
+        "n": "04",
+        "title": "Automation and analytics",
+        "desc": "Building an analytics system and systematic management of business processes."
+      },
+      {
+        "n": "05",
+        "title": "Product management",
+        "desc": "Creating and improving products, enriching customer experience, growth points, hypothesis testing, CJM, product process management."
+      },
+      {
+        "n": "06",
+        "title": "Your own management project",
+        "desc": "Repackaging your own product and business. Project defense, option for a double diploma."
       }
     ]
   },
@@ -97,8 +140,20 @@
     "intro": "The program is built for leaders responsible for the growth and future of the business.",
     "list": [
       {
-        "title": "",
-        "desc": ""
+        "title": "Top management",
+        "desc": "Leaders responsible for strategic decisions and their implementation."
+      },
+      {
+        "title": "Business owners",
+        "desc": "Goals: business growth, finding new opportunities and markets."
+      },
+      {
+        "title": "Owners' advisors",
+        "desc": "Finding and adopting innovation, operational efficiency, anti-crisis work."
+      },
+      {
+        "title": "Development directors",
+        "desc": "Designing, approving and implementing strategic decisions."
       }
     ]
   },

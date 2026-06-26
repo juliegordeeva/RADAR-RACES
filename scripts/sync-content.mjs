@@ -102,7 +102,7 @@ function parseRadar(body) {
 }
 
 function parseFormatParts(body) {
-  const subs = splitSubsections(field(body, "Части") || field(body, "Parts") || body);
+  const subs = splitSubsections(body);
   const parts = [];
   for (const [, partBody] of subs) {
     parts.push({
@@ -116,7 +116,7 @@ function parseFormatParts(body) {
 }
 
 function parseModules(body) {
-  const subs = splitSubsections(field(body, "Модули") || field(body, "Modules") || body);
+  const subs = splitSubsections(body);
   const list = [];
   for (const [title, partBody] of subs) {
     const nMatch = title.match(/(\d{2})/);
@@ -130,7 +130,7 @@ function parseModules(body) {
 }
 
 function parseAudience(body) {
-  const subs = splitSubsections(field(body, "Аудитория") || field(body, "Audience") || body);
+  const subs = splitSubsections(body);
   const list = [];
   for (const [, partBody] of subs) {
     list.push({
@@ -177,7 +177,7 @@ function parseSpeaker(body) {
 }
 
 function parsePersons(body) {
-  const subs = splitSubsections(field(body, "Контакты") || field(body, "Contacts") || body);
+  const subs = splitSubsections(body);
   const persons = [];
   for (const [, partBody] of subs) {
     const name = field(partBody, "Имя") || field(partBody, "Name");
