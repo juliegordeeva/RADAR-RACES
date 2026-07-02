@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Согласие на обработку персональных данных · RADAR RACES</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --color-ink: #0a0b0d;
+        --color-ink-soft: #111317;
+        --color-carbon: #16181d;
+        --color-steel: #24272e;
+        --color-fog: #8b9099;
+        --color-mist: #c7ccd4;
+        --color-snow: #f4f6f9;
+        --color-racing: #e10600;
+        --color-racing-dark: #b00500;
+        --shadow-glow: 0 0 60px -15px rgba(225, 6, 0, 0.55);
+        --font-display: "Oswald", "Arial Narrow", sans-serif;
+        --font-sans: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+        border-color: var(--color-steel);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--color-ink);
+        color: var(--color-mist);
+        font-family: var(--font-sans);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .container {
+        margin: 0 auto;
+        max-width: 1120px;
+        padding: 0 20px;
+      }
+
+      .font-display {
+        font-family: var(--font-display);
+        text-transform: uppercase;
+        letter-spacing: 0.01em;
+        line-height: 0.95;
+      }
+
+      .header {
+        position: fixed;
+        inset: 0 0 auto 0;
+        z-index: 50;
+        border-bottom: 1px solid rgba(36, 39, 46, 0.7);
+        background: rgba(10, 11, 13, 0.85);
+        backdrop-filter: blur(10px);
+      }
+
+      .header-inner {
+        display: flex;
+        height: 72px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .brand-mark {
+        display: grid;
+        place-items: center;
+        height: 36px;
+        width: 36px;
+        border-radius: 6px;
+        background: var(--color-racing);
+        color: #fff;
+        box-shadow: var(--shadow-glow);
+      }
+
+      .brand-title {
+        font-family: var(--font-display);
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        color: #fff;
+      }
+      .brand-title span {
+        color: var(--color-racing);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        color: var(--color-mist);
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .nav a {
+        color: var(--color-mist);
+        transition: color 160ms ease;
+      }
+      .nav a:hover {
+        color: #fff;
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        padding: 10px 14px;
+        background: #fff;
+        color: var(--color-ink);
+        font-size: 14px;
+        font-weight: 700;
+        transition: background 160ms ease;
+        white-space: nowrap;
+      }
+      .cta:hover {
+        background: var(--color-mist);
+      }
+
+      main {
+        padding: 104px 0 56px;
+        background: var(--color-ink-soft);
+        border-bottom: 1px solid var(--color-steel);
+      }
+
+      .card {
+        background: rgba(22, 24, 29, 0.78);
+        border: 1px solid var(--color-steel);
+        border-radius: 24px;
+        padding: 28px;
+      }
+
+      h1 {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: 44px;
+        font-weight: 700;
+        color: #fff;
+      }
+      h2 {
+        margin: 26px 0 10px;
+        font-family: var(--font-display);
+        font-size: 22px;
+        font-weight: 700;
+        color: #fff;
+      }
+
+      p {
+        margin: 10px 0;
+        color: var(--color-mist);
+        line-height: 1.65;
+      }
+
+      footer {
+        background: var(--color-ink-soft);
+        padding: 28px 0;
+      }
+
+      .footer-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+      }
+
+      .footer-text {
+        color: var(--color-fog);
+        font-size: 14px;
+        text-align: center;
+      }
+
+      @media (min-width: 840px) {
+        .footer-inner {
+          flex-direction: row;
+          text-align: left;
+        }
+        .footer-text {
+          text-align: left;
+        }
+      }
+
+      @media (max-width: 920px) {
+        .nav {
+          display: none;
+        }
+        h1 {
+          font-size: 36px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-inner">
+          <a class="brand" href="./" aria-label="RADAR RACES — на главную">
+            <span class="brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M12 12 L18 8" stroke-linecap="round"></path>
+                <circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"></circle>
+              </svg>
+            </span>
+            <span class="brand-title">RADAR<span> RACES</span></span>
+          </a>
+
+          <nav class="nav" aria-label="Навигация">
+            <a href="./#about">О проекте</a>
+            <a href="./#format">Формат</a>
+            <a href="./#modules">RADAR Международная программа</a>
+            <a href="./#audience">Кому подходит</a>
+            <a href="./#team">Команда</a>
+            <a href="./#pricing">Стоимость</a>
+            <a href="./#contacts">Контакты</a>
+          </nav>
+
+          <a class="cta" href="mailto:prof@jgordeeva.ru">Оставить заявку</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <article class="card">
+          <h1>Согласие на обработку персональных данных</h1>
+
+          <p>
+            Я, субъект персональных данных, в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных
+            данных» даю согласие Индивидуальному предпринимателю Гордеевой Юлии Владимировне (ИНН 501304589898, ОГРНИП
+            319774600004492) на обработку моих персональных данных на следующих условиях:
+          </p>
+
+          <h2>1. Перечень данных</h2>
+          <p>Имя, номер телефона, адрес электронной почты.</p>
+
+          <h2>2. Цели обработки</h2>
+          <p>
+            Обработка заявки, поступившей через сайт www.radarexec.ru, связь со мной для уточнения деталей и оказания
+            услуг; направление рассылок — при отдельном согласии.
+          </p>
+
+          <h2>3. Способ обработки</h2>
+          <p>
+            Данные передаются мной напрямую на электронную почту Оператора (prof@jgordeeva.ru) через мой собственный
+            почтовый клиент при отправке заявки. Согласие считается предоставленным в момент отправки заполненной формы.
+          </p>
+
+          <h2>4. Срок действия</h2>
+          <p>Согласие действует до его отзыва мной или до достижения цели обработки.</p>
+
+          <h2>5. Порядок отзыва</h2>
+          <p>Согласие может быть отозвано в любой момент путём направления письма на адрес prof@jgordeeva.ru.</p>
+        </article>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-inner">
+          <div class="brand" aria-label="RADAR RACES">
+            <span class="brand-mark" aria-hidden="true" style="height: 32px; width: 32px; box-shadow: none">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M12 12 L18 8" stroke-linecap="round"></path>
+              </svg>
+            </span>
+            <span class="brand-title" style="font-size: 18px">RADAR<span> RACES</span></span>
+          </div>
+
+          <p class="footer-text">Управленческие интенсивы нового формата</p>
+          <p class="footer-text">© <span id="year"></span> · Kamensky Racing School</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById(\"year\").textContent = String(new Date().getFullYear());
+    </script>
+  </body>
+</html>
