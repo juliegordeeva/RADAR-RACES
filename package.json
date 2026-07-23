@@ -14,6 +14,7 @@
     "screenshots:fast": "node scripts/screenshots.mjs --skip-build",
     "screenshots:mobile": "node scripts/screenshots.mjs --mobile",
     "screenshots:mobile:fast": "node scripts/screenshots.mjs --mobile --skip-build",
+    "pdf": "node scripts/generate-pdf.mjs",
     "predeploy": "npm run screenshots"
   },
   "dependencies": {

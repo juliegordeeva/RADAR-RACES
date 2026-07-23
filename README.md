@@ -62,6 +62,20 @@ CHROME_PATH="/path/to/Google Chrome" npm run screenshots
 
 Перед ручным деплоем можно запустить `npm run predeploy` — это то же самое, что `npm run screenshots`.
 
+## Корпоративный PDF (офлайн-версия)
+
+Для сетей, где сайт недоступен:
+
+```bash
+npm run pdf
+```
+
+Файлы:
+- `public/radar-races-overview.pdf` — гоночный корпоративный обзор A4
+- `public/radar-races-overview.html` — исходник для перегенерации
+
+После деплоя: https://races.radarexec.ru/radar-races-overview.pdf
+
 ## Деплой
 
 Сайт автоматически публикуется на **GitHub Pages** при push в ветку `main`
