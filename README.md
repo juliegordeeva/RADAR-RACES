@@ -49,7 +49,7 @@ npm run screenshots:fast     # только скриншоты, если out/ у
 
 Скрипт:
 1. Собирает статический сайт (`out/`)
-2. Поднимает локальный сервер с тем же `basePath`, что и на GitHub Pages (`/RADAR-RACES/`)
+2. Поднимает локальный сервер
 3. Открывает сайт в Google Chrome (headless) и сохраняет PNG:
    - `screenshots/ru/` и `screenshots/en/` — hero, about, format, modules, audience, speaker, pricing, contacts
    - `00-full-page.png` — полная страница
@@ -67,7 +67,25 @@ CHROME_PATH="/path/to/Google Chrome" npm run screenshots
 Сайт автоматически публикуется на **GitHub Pages** при push в ветку `main`
 через GitHub Actions (`.github/workflows/deploy.yml`).
 
-Адрес: https://juliegordeeva.github.io/RADAR-RACES/
+**Основной адрес:** https://races.radarexec.ru/
+
+### Настройки GitHub Pages (важно)
+
+В репозитории: **Settings → Pages**
+
+| Параметр | Правильное значение |
+|----------|---------------------|
+| **Source / Build and deployment** | **GitHub Actions** (не «Deploy from a branch») |
+| **Custom domain** | `races.radarexec.ru` |
+| **Enforce HTTPS** | включено |
+
+> Это Next.js-проект: на сайт попадает **собранная** папка `out/`, а не исходники из корня `main`.
+> Если случайно переключить Source на «Deploy from a branch» → сайт станет 404 или «кривым».
+> Напишите в чат — верну настройку.
+
+Файл `public/CNAME` с доменом `races.radarexec.ru` копируется в сборку и не даёт настройке слетать при деплое.
+
+Ручной перезапуск деплоя: **Actions → Deploy to GitHub Pages → Run workflow**.
 
 ## Структура
 
