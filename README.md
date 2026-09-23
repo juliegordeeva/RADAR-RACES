@@ -39,7 +39,9 @@ NEXT_PUBLIC_FORM_ENDPOINT=https://formspree.io/f/xxxxx
 
 Публичный домен: `experience.radarexec.ru` (`public/CNAME`).
 
-Инструкция по редиректам со `races.radarexec.ru`: `docs/MIGRATION.md`.  
+Это отдельный репозиторий от `RADAR-RACES` / `races.radarexec.ru` — без переноса и без редиректов.
+
+Инструкция по DNS: `docs/MIGRATION.md`.  
 Открытые вопросы владельцу: `docs/OWNER-QUESTIONS.md`.
 
 ## Деплой
