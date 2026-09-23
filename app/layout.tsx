@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter, Oswald } from "next/font/google";
+import { I18nProvider } from "@/lib/i18n";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,39 +9,29 @@ const inter = Inter({
   display: "swap",
 });
 
-const outfit = Outfit({
-  subsets: ["latin"],
+const oswald = Oswald({
+  subsets: ["latin", "cyrillic"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-outfit",
+  variable: "--font-oswald",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://experience.radarexec.ru"),
-  title: {
-    default: "Корпоративные приключения и экстремальные выезды — RADAR Experience",
-    template: "%s — RADAR Experience",
-  },
+  title: "RADAR RACES — РазГОНИ свой управленческий радар",
   description:
-    "Организация приключенческих и экстремальных программ для корпоративных команд. Площадки, операторы, логистика и премиальный формат с управленческим разбором.",
-  openGraph: {
-    type: "website",
-    locale: "ru_RU",
-    url: "https://experience.radarexec.ru",
-    siteName: "RADAR Experience",
-    title: "RADAR Experience",
-    description:
-      "Корпоративные приключения и экстремальные выезды под ключ. При необходимости — с управленческим разбором.",
-  },
-  alternates: {
-    canonical: "https://experience.radarexec.ru",
-  },
+    "Управленческий интенсив нового формата: развитие лидерских навыков топ-менеджеров через опыт автогонок и стратегические сессии. Программа уровня Executive MBA.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="ru" className={`${inter.variable} ${outfit.variable}`}>
-      <body>{children}</body>
+    <html lang="ru" className={`${inter.variable} ${oswald.variable}`}>
+      <body>
+        <I18nProvider>{children}</I18nProvider>
+      </body>
     </html>
   );
 }

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<title>RADAR RACES — корпоративный обзор</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: #0a0b0d; color: #c7ccd4;
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 9.4pt; line-height: 1.45;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  h1, h2, .card-title, .expert-name, .stat-value, .brand-word {
+    font-family: "Oswald", "Arial Narrow", sans-serif;
+    font-weight: 700; text-transform: uppercase; letter-spacing: 0.01em;
+    color: #fff; margin: 0;
+  }
+  h1 { font-size: 28pt; line-height: 1.05; }
+  h2 { font-size: 16pt; line-height: 1.15; margin: 0 0 6px; }
+  p { margin: 0 0 6px; }
+  strong { font-weight: 600; color: #f4f6f9; }
+  ul { margin: 4px 0 0; padding-left: 14px; }
+  li { margin: 0 0 2px; }
+
+  .sheet {
+    width: 210mm;
+    height: 297mm;
+    padding: 15mm 15mm 13mm;
+    overflow: hidden;
+    page-break-after: always;
+    position: relative;
+    background:
+      radial-gradient(ellipse at 12% 0%, rgba(225,6,0,0.18), transparent 42%),
+      radial-gradient(ellipse at 100% 100%, rgba(225,6,0,0.08), transparent 40%),
+      #0a0b0d;
+  }
+  .sheet:last-child { page-break-after: auto; }
+  .sheet-inner { width: 180mm; position: relative; z-index: 1; }
+
+  .track {
+    position: absolute; left: 0; right: 0; bottom: 18mm; height: 3px;
+    background-image: repeating-linear-gradient(
+      90deg, #e10600 0, #e10600 14px, transparent 14px, transparent 28px
+    );
+    opacity: 0.55;
+  }
+
+  .sheet.cover {
+    padding: 20mm 15mm 16mm;
+  }
+  .sheet.cover .sheet-inner {
+    height: 261mm;
+    display: flex;
+    flex-direction: column;
+  }
+  .sheet.cover h1 { margin: 0 0 8mm; }
+  .sheet.cover h1 .accent { color: #e10600; }
+  .sheet.cover p { color: #c7ccd4; margin: 0 0 3.5mm; }
+  .cover-bottom { margin-top: auto; }
+
+  .brand {
+    display: flex; align-items: center; gap: 10px;
+    margin: 0 0 16mm;
+  }
+  .brand-mark {
+    width: 28px; height: 28px; border-radius: 4px;
+    background: #e10600; color: #fff;
+    display: grid; place-items: center;
+  }
+  .brand-word {
+    font-size: 14pt; letter-spacing: 0.04em;
+  }
+  .brand-word span { color: #e10600; }
+
+  .eyebrow {
+    font-family: "Oswald", "Arial Narrow", sans-serif;
+    font-size: 8pt; letter-spacing: 0.22em; text-transform: uppercase;
+    color: #e10600; margin: 0 0 4px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .eyebrow::before {
+    content: ""; width: 18px; height: 2px; background: #e10600;
+  }
+  .lead { color: #8b9099; margin: 0 0 8px; }
+
+  .stats {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+    margin: 10mm 0 0;
+  }
+  .stat {
+    border: 1px solid #24272e;
+    background: rgba(22,24,29,0.85);
+    padding: 10px 12px;
+  }
+  .stat-value { font-size: 20pt; color: #fff; line-height: 1; margin-bottom: 4px; }
+  .stat-label { font-size: 7.5pt; color: #8b9099; line-height: 1.35; }
+
+  .cover-meta {
+    margin-top: 12mm;
+    font-size: 8pt; line-height: 1.7; color: #8b9099;
+  }
+  .note {
+    margin-top: 8mm;
+    border: 1px solid rgba(225,6,0,0.45);
+    background: rgba(225,6,0,0.08);
+    padding: 8px 10px; color: #c7ccd4; font-size: 8.3pt; line-height: 1.45;
+  }
+
+  .block { margin: 0 0 8mm; }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
+  table.list { width: 100%; border-collapse: collapse; margin: 2px 0 0; }
+  table.list td {
+    vertical-align: top; padding: 7px 0;
+    border-bottom: 1px solid #24272e;
+  }
+  table.list tr:last-child td { border-bottom: none; }
+  td.num {
+    width: 12mm; padding-right: 3mm;
+    font-family: "Oswald", "Arial Narrow", sans-serif;
+    font-size: 10pt; letter-spacing: 0.04em; color: #e10600; white-space: nowrap;
+  }
+  td.letter { font-size: 14pt; width: 10mm; }
+
+  .card {
+    border: 1px solid #24272e;
+    background: #16181d;
+    padding: 10px 12px; margin: 0 0 6px;
+  }
+  .card-tag {
+    font-family: "Oswald", "Arial Narrow", sans-serif;
+    font-size: 7.5pt; letter-spacing: 0.16em; text-transform: uppercase;
+    color: #e10600; margin: 0 0 4px;
+  }
+  .card-title { font-size: 11.5pt; margin: 0 0 4px; }
+  .card p { color: #c7ccd4; }
+  .card li { color: #8b9099; font-size: 8.5pt; }
+
+  .audience-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 4px;
+  }
+  .audience-card {
+    border: 1px solid #24272e; background: #16181d; padding: 10px 12px;
+  }
+  .audience-card .num {
+    font-family: "Oswald", "Arial Narrow", sans-serif;
+    font-size: 16pt; color: #e10600; letter-spacing: 0.02em;
+  }
+  .audience-card .card-title { font-size: 11pt; margin: 4px 0; }
+  .audience-card p { color: #8b9099; margin: 0; font-size: 8.5pt; }
+
+  .expert {
+    border: 1px solid #24272e; background: #16181d;
+    padding: 10px 12px; margin: 0 0 6px;
+  }
+  .expert-top { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 4px; }
+  .avatar {
+    width: 36px; height: 36px; border-radius: 8px; flex: none;
+    background: linear-gradient(135deg, #e10600, #b00500);
+    color: #fff; display: grid; place-items: center;
+    font-family: "Oswald", "Arial Narrow", sans-serif;
+    font-size: 11pt; font-weight: 700;
+  }
+  .expert-name { font-size: 12pt; margin: 0 0 2px; }
+  .role { color: #8b9099; font-size: 8.5pt; margin: 0; }
+  .expert li { color: #c7ccd4; font-size: 8.3pt; }
+
+  .mission {
+    border-left: 3px solid #e10600;
+    padding: 6px 0 6px 10px;
+    color: #c7ccd4; margin: 0 0 8px;
+  }
+
+  .contact-box {
+    background: linear-gradient(180deg, #16181d, #111317);
+    border: 1px solid #24272e;
+    border-top: 2px solid #e10600;
+    padding: 12px 14px; margin-top: 6mm;
+  }
+  .contact-box h2 { margin-bottom: 6px; }
+  .contact-box p { color: #8b9099; }
+  .contact-box a { color: #e10600; text-decoration: none; }
+  .contact-row {
+    font-family: "Oswald", "Arial Narrow", sans-serif;
+    font-size: 9pt; letter-spacing: 0.04em; text-transform: uppercase;
+    color: #f4f6f9; margin: 5px 0 0 !important;
+  }
+  .footer-line {
+    margin-top: 7mm; padding-top: 6px;
+    border-top: 1px solid #24272e;
+    font-size: 7.5pt; color: #8b9099;
+  }
+</style>
+</head>
+<body>
+
+<section class="sheet cover">
+  <div class="sheet-inner">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="9"></circle>
+          <path d="M12 12 L18 8" stroke-linecap="round"></path>
+          <circle cx="12" cy="12" r="1.6" fill="currentColor" stroke="none"></circle>
+        </svg>
+      </span>
+      <span class="brand-word">RADAR<span> RACES</span></span>
+    </div>
+    <h1>РазГОНИ свой<br/><span class="accent">управленческий радар</span></h1>
+    <p>Уникальные управленческие сессии: экстремальный опыт автогонок на профессиональной трассе и глубокий анализ лидерских компетенций.</p>
+    <p>1–2–3-дневные интенсивы и стратегические сессии для руководителей и топ-команд. Формат Experiential Learning — обучение через новый опыт.</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value">500+</div>
+        <div class="stat-label">часов тренингов для топ-команд за год</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">5</div>
+        <div class="stat-label">управленческих траекторий в каждом заезде</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">3</div>
+        <div class="stat-label">трассы: Москва · НН · Дубай</div>
+      </div></div>
+    <div class="cover-bottom">
+      <div class="cover-meta">
+        Управленческие интенсивы нового формата · программа уровня Executive<br/>
+        Сайт: https://races.radarexec.ru<br/>
+        Почта: prof@jgordeeva.ru · Telegram: @Prof_jouls
+      </div>
+      <div class="note">
+        Документ для корпоративной рассылки. Полная информация с сайта races.radarexec.ru —
+        для случаев, когда сеть ограничивает доступ к сайту.
+      </div>
+    </div>
+  </div>
+  <div class="track"></div>
+</section>
+
+<section class="sheet">
+  <div class="sheet-inner">
+    <div class="block">
+      <div class="eyebrow">01 / О проекте</div>
+      <h2>Обучение через опыт, который меняет мышление</h2>
+      <p>RADAR RACES соединяет экстремальный опыт автогонок с глубоким анализом управленческих компетенций.</p><p>Формат Experiential Learning позволяет выйти за рамки привычного, переосмыслить управленческий стиль и обрести инсайты для роста в роли лидера.</p><p>Гоночная трасса — метафора бизнеса: скорость, риски и решения в неопределённости, которые можно прожить, осознать и натренировать.</p>
+    </div>
+    <div class="block">
+      <div class="eyebrow">Расшифровка РАДАР</div>
+      <h2>Пять осей управленческого заезда</h2>
+      <table class="list">
+      <tr>
+        <td class="num letter">Р</td>
+        <td>Решения в условиях скорости и риска</td>
+      </tr>
+      <tr>
+        <td class="num letter">А</td>
+        <td>Адаптивность и гибкость мышления</td>
+      </tr>
+      <tr>
+        <td class="num letter">Д</td>
+        <td>Действие на основе осознанности</td>
+      </tr>
+      <tr>
+        <td class="num letter">А</td>
+        <td>Анализ реакций и поведенческих паттернов</td>
+      </tr>
+      <tr>
+        <td class="num letter">Р</td>
+        <td>Рост личного и управленческого потенциала</td>
+      </tr></table>
+    </div>
+    <div class="block">
+      <div class="eyebrow">04 / Кому подходит</div>
+      <h2>Для тех, кто принимает стратегические решения</h2>
+      <p class="lead">Программа создана для лидеров, отвечающих за развитие и будущее бизнеса.</p>
+      <div class="audience-grid">
+      <div class="audience-card">
+        <div class="num">01</div>
+        <div class="card-title">Высший менеджмент</div>
+        <p>Руководители, отвечающие за стратегические решения и их внедрение.</p>
+      </div>
+      <div class="audience-card">
+        <div class="num">02</div>
+        <div class="card-title">Собственники бизнеса</div>
+        <p>Развитие бизнеса, поиск новых возможностей и рынков.</p>
+      </div>
+      <div class="audience-card">
+        <div class="num">03</div>
+        <div class="card-title">Советники собственников</div>
+        <p>Инновации, операционная эффективность, антикризис.</p>
+      </div>
+      <div class="audience-card">
+        <div class="num">04</div>
+        <div class="card-title">Директора по развитию</div>
+        <p>Разработка, принятие и реализация стратегических решений.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="sheet-inner">
+    <div class="eyebrow">02 / Формат</div>
+    <h2>Две части одного интенсива</h2>
+    <p class="lead">Сначала — заезды на профессиональной трассе, затем — разбор реакций и работа над лидерскими компетенциями.</p>
+    <div class="split">
+      <div class="card">
+        <div class="card-tag">Часть 1 · Трасса</div>
+        <div class="card-title">01. Гоночные заезды и разбор реакций</div>
+        <p>Участие в заездах на профессиональной трассе с разбором осознанных и неосознанных реакций.</p>
+        <ul>
+          <li>Быстрые решения в стрессовых ситуациях</li><li>Управление рисками в реальном времени</li><li>Понимание реакций и поведенческих паттернов</li><li>Осознание ограничений и потенциала роста</li><li>Командное взаимодействие в нестандартной обстановке</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-tag">Часть 2 · Сессия</div>
+        <div class="card-title">02. Осознанное управление собой как лидером</div>
+        <p>Сессия по осознанному управлению личными и профессиональными навыками, талантами и энергией.</p>
+        <ul>
+          <li>Сильные стороны и зоны развития как лидера</li><li>Инструменты личной и профессиональной эффективности</li><li>Стратегии управления энергией и ресурсным состоянием</li><li>Осознанное лидерство и эмоциональный интеллект</li><li>План развития ключевых управленческих компетенций</li>
+        </ul>
+      </div></div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="sheet-inner">
+    <div class="eyebrow">03 / RADAR Международная программа</div>
+    <h2>6 управленческих модулей уровня Executive</h2>
+    <p class="lead">Каждый модуль — 3–4 дня; после обучения — поддержка и менторинг. При прохождении всех модулей — диплом государственного образца.</p>
+    <table class="list">
+      <tr>
+        <td class="num">01</td>
+        <td><strong>Раскрытие управленческого потенциала.</strong> Тренировки на трассе (партнёр Kamensky Racing School) и сессия по осознанному управлению эффективностью лидера.</td>
+      </tr>
+      <tr>
+        <td class="num">02</td>
+        <td><strong>Управленческое бизнес-моделирование.</strong> Лидерская бизнес-модель управленца и новая бизнес-модель компании. Антикризисные преобразования.</td>
+      </tr>
+      <tr>
+        <td class="num">03</td>
+        <td><strong>Искусственный интеллект в управлении.</strong> Практика внедрения ИИ в процесс принятия и проверки управленческих решений.</td>
+      </tr>
+      <tr>
+        <td class="num">04</td>
+        <td><strong>Автоматизация и аналитика.</strong> Система аналитики и системного управления бизнес-процессами.</td>
+      </tr>
+      <tr>
+        <td class="num">05</td>
+        <td><strong>Управление продуктом.</strong> Продукт и клиентский опыт, точки роста, гипотезы, CJM, продуктовые процессы.</td>
+      </tr>
+      <tr>
+        <td class="num">06</td>
+        <td><strong>Собственный управленческий проект.</strong> Переупаковка продукта и бизнеса. Защита проекта, возможность двойного диплома.</td>
+      </tr></table>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="sheet-inner">
+    <div class="block">
+      <div class="eyebrow">05 / Команда</div>
+      <h2>Кто ведёт программу</h2>
+      <p class="mission">Наша задача — передать супер-способности 3D-видения бизнес-ситуации целиком: от модели через лидерскую команду, экономику решений и человеческую сложность изменений к устойчивой управленческой системе.</p>
+      
+      <div class="expert">
+        <div class="expert-top">
+          <div class="avatar">ГЮ</div>
+          <div>
+            <div class="expert-name">Гордеева Юлия Владимировна</div>
+            <div class="role">Международный консультант, идейный вдохновитель RADAR RACES</div>
+          </div>
+        </div>
+        <ul>
+          <li>2010–2022 — руководитель международных корпоративных программ обучения IBS Plekhanov</li><li>2022 — н/в — руководитель консалтинговых и обучающих практик для среднего и крупного бизнеса</li><li>За 2025–2026 лично провела более 250 часов корпоративных тренингов и стратегических сессий</li><li>Спикер и руководитель MBA-программ; эксперт площадок МБМ, ЦДП, Агентства инноваций Москвы</li>
+        </ul>
+      </div>
+      <div class="expert">
+        <div class="expert-top">
+          <div class="avatar">КИ</div>
+          <div>
+            <div class="expert-name">Илья Каменский</div>
+            <div class="role">Владелец Kamensky Racing School · партнёр по скорости решений и управлению реакциями</div>
+          </div>
+        </div>
+        <ul>
+          <li>Профессиональная гоночная школа и инфраструктура трассы</li><li>Среда давления, в которой управленческие реакции становятся видимыми</li><li>Сопровождение заездов как живой модели поведения топ-команды</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sheet">
+  <div class="sheet-inner">
+    <div class="eyebrow">06 / Организация</div>
+    <h2>Гонки РАДАР — инвестиция в управленческий рост</h2>
+    <p class="lead">Организуем управленческое мероприятие в стиле Experiential Learning — обучение руководителей через новый опыт.</p>
+    <div class="card" style="margin-bottom:8px;">
+      <div class="card-tag">Ключевой актив</div>
+      <p style="margin:0;color:#f4f6f9;">Ключевой актив: заезды на гоночных трассах и управленческая сессия — разбор.</p>
+    </div>
+    <div class="block">
+      <div class="eyebrow">Ключевые партнёры и форматы опыта</div>
+      <table class="list">
+      <tr>
+        <td class="num">01</td>
+        <td>яхтенные клубы и яхт-регаты</td>
+      </tr>
+      <tr>
+        <td class="num">02</td>
+        <td>экстремальный речной рафтинг</td>
+      </tr>
+      <tr>
+        <td class="num">03</td>
+        <td>каньонинг на Камчатке</td>
+      </tr>
+      <tr>
+        <td class="num">04</td>
+        <td>вождение суперкаров по льду на Байкале</td>
+      </tr>
+      <tr>
+        <td class="num">05</td>
+        <td>полёты на легкомоторных самолётах (MENA, CIS)</td>
+      </tr></table>
+    </div>
+    <p>Организация любого заезда включает выездное мероприятие, двух экспертов, сопровождение после модуля, договоры и сертификаты.</p>
+    <p class="lead">Точная стоимость зависит от формата, состава группы и локации. Рассчитаем под ваш запрос.</p>
+
+    <div class="contact-box">
+      <h2>Оставьте заявку</h2>
+      <p>Напишите в свободной форме — ответим и предложим формат под вашу команду и задачу.</p>
+      <p class="contact-row">Email: <a href="mailto:prof@jgordeeva.ru">prof@jgordeeva.ru</a></p>
+      <p class="contact-row">Telegram: @Prof_jouls</p>
+      <p class="contact-row">Сайт: https://races.radarexec.ru</p>
+    </div>
+    <p class="footer-line">
+      RADAR RACES · Experiential Learning для руководителей и топ-команд ·
+      Документ для офлайн-рассылки · © Kamensky Racing School
+    </p>
+  </div>
+  <div class="track"></div>
+</section>
+
+</body>
+</html>
