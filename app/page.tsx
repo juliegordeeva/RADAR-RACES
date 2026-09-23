@@ -1,31 +1,38 @@
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Format from "@/components/Format";
-import Modules from "@/components/Modules";
-import Audience from "@/components/Audience";
-import Speaker from "@/components/Speaker";
-import Gallery from "@/components/Gallery";
-import Pricing from "@/components/Pricing";
-import Contacts from "@/components/Contacts";
-import Footer from "@/components/Footer";
+import type { Metadata } from "next";
+import { PageShell } from "@/components/experience/ui";
+import {
+  HomeConstructor,
+  HomeContact,
+  HomeFaq,
+  HomeFormats,
+  HomeHero,
+  HomeJulia,
+  HomeLevels,
+  HomeLocations,
+  HomePrinciples,
+  HomeProcess,
+} from "@/components/experience/HomeSections";
+import { home } from "@/lib/experience-content";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: home.meta.title,
+  description: home.meta.description,
+  alternates: { canonical: "https://experience.radarexec.ru/" },
+};
+
+export default function HomePage() {
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Format />
-        <Modules />
-        <Audience />
-        <Speaker />
-        <Gallery />
-        <Pricing />
-        <Contacts />
-      </main>
-      <Footer />
-    </>
+    <PageShell>
+      <HomeHero />
+      <HomePrinciples />
+      <HomeLevels />
+      <HomeConstructor />
+      <HomeFormats />
+      <HomeLocations />
+      <HomeProcess />
+      <HomeJulia />
+      <HomeFaq />
+      <HomeContact />
+    </PageShell>
   );
 }
